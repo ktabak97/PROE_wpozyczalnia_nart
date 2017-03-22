@@ -30,6 +30,10 @@ void starttestwypozyczalnia()
 
 	pierwsza.wypiszNarty();
 
+	Wypozyczalnia kopia(pierwsza);
+//	kopia.dodajNarty("atomic");
+	kopia.wypiszNarty();
+
 
 
 	cout << "////////////////////////" << endl;

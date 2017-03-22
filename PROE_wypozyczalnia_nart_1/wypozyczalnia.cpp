@@ -7,15 +7,26 @@ using namespace std;
 
 
 size_t Wypozyczalnia::ilosc_wypozyczalni = 0;
-size_t Wypozyczalnia::ilosc_nart = 0;
-size_t Wypozyczalnia::ilosc_snowboardow = 0;
-size_t Wypozyczalnia::ilosc_kaskow = 0;
+size_t Wypozyczalnia::ilosc_nartG = 0;
+size_t Wypozyczalnia::ilosc_snowboardowG = 0;
+size_t Wypozyczalnia::ilosc_kaskowG = 0;
 
 
 Wypozyczalnia::Wypozyczalnia()
 {
 	adres = "wypozyczalniowa";
 	pomieszczenia = 1;
+	ilosc_nart = 1;
+	ilosc_snowboardow = 1;
+	ilosc_kaskow = 1;
+
+	narty = new Narty[ilosc_nart];
+	snowboard = new Snowboard[ilosc_snowboardow];
+	kask = new Kask[ilosc_kaskow];
+
+//	Narty *narty = nullptr;
+//	Snowboard *snowboard = nullptr;
+//	Kask *kask = nullptr;
 	
 	++ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - konstruktor domyslny");
@@ -25,13 +36,100 @@ Wypozyczalnia::Wypozyczalnia(string nazwa_w, unsigned int pomieszczenia_w)
 {
 	adres = nazwa_w;
 	pomieszczenia = pomieszczenia_w;
+	ilosc_nart = 1;
+	ilosc_snowboardow = 1;
+	ilosc_kaskow = 1;
+
+	narty = new Narty[ilosc_nart];
+	snowboard = new Snowboard[ilosc_snowboardow];
+	kask = new Kask[ilosc_kaskow];
+	
+	//	Narty *narty = nullptr;
+//	Snowboard *snowboard = nullptr;
+//	Kask *kask = nullptr;
 
 	++ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - konstruktor z parametrami");
 };
 
+
+Wypozyczalnia::Wypozyczalnia(const Wypozyczalnia &wypozyczalnia)
+{
+	adres = wypozyczalnia.adres;
+	pomieszczenia = wypozyczalnia.pomieszczenia;
+	ilosc_nart = wypozyczalnia.ilosc_nart;
+	ilosc_snowboardow = wypozyczalnia.ilosc_snowboardow;
+	ilosc_kaskow = wypozyczalnia.ilosc_kaskow;
+	
+	if (wypozyczalnia.narty != nullptr)
+	{
+		narty = new Narty[ilosc_nart];
+		for (int i = 0; i < ilosc_nart; i++)
+			narty[i] = wypozyczalnia.narty[i];
+	}
+	else
+		narty = nullptr;
+
+	if (wypozyczalnia.snowboard != nullptr)
+	{
+		snowboard = new Snowboard[ilosc_snowboardow];
+		for (int i = 0; i < ilosc_snowboardow; i++)
+			snowboard[i] = wypozyczalnia.snowboard[i];
+	}
+	else
+		snowboard = nullptr;
+
+	if (wypozyczalnia.kask != nullptr)
+	{
+		kask = new Kask[ilosc_kaskow];
+		for (int i = 0; i < ilosc_kaskow; i++)
+			kask[i] = wypozyczalnia.kask[i];
+	}
+	else
+		kask = nullptr;
+		
+	DEBUG_LOG("Wypozyczalnia - konstruktor kopiujacy");
+		++ilosc_wypozyczalni;
+}
+	
+	/*
+	narty = new Narty;
+	for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
+		narty[i] = wypozyczalnia.narty[i];
+	snowboard = new Snowboard;
+	for (int i = 0; i < wypozyczalnia.ilosc_snowboardow; i++)
+		snowboard[i] = wypozyczalnia.snowboard[i];
+	kask = new Kask;
+	for (int i = 0; i < wypozyczalnia.ilosc_kaskow; i++)
+		kask[i] = wypozyczalnia.kask[i];
+
+
+	*//*
+	narty = nullptr;
+	snowboard = nullptr;
+	kask = nullptr;
+
+
+
+		for (std::size_t i = 0; i < number_of_computers_; ++i)
+			computers_.push_back(computer_store.computers_[i]);
+		try
+		{
+			employees_ = new Employee[number_of_employees_];
+		}
+		catch (std::bad_alloc& ex)
+		{
+			std::cerr << "Nie mozna zaalokowac pamieci: " << ex.what() << std::endl;
+		}
+		for (std::size_t i = 0; i < number_of_employees_; ++i)
+			employees_[i] = computer_store.employees_[i];
+	*/
+//}
 Wypozyczalnia::~Wypozyczalnia()
 {
+	delete[] narty;
+	delete[] snowboard;
+	delete[] kask;
 	--ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - destruktor");
 }
@@ -251,17 +349,23 @@ size_t Wypozyczalnia::zwrocIloscWypozyczalni(void)
 
 size_t Wypozyczalnia::zwrocIloscNart(void)
 {
-	return ilosc_nart;
+	return ilosc_nartG;
 }
 size_t Wypozyczalnia::zwrocIloscSnowboardow(void)
 {
-	return ilosc_snowboardow;
+	return ilosc_snowboardowG;
 }
 size_t Wypozyczalnia::zwrocIloscKaskow(void)
 {
-	return ilosc_kaskow;
+	return ilosc_kaskowG;
 }
 
+/*
+Wypozyczalnia Wypozyczalnia::operator+(const Narty &narty)
+{
+	Narty*c;
+	c = new Narty[1];
+	return;
 
-
-
+}
+*/

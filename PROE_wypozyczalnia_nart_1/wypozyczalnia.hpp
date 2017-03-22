@@ -24,13 +24,21 @@ class Wypozyczalnia
 private:
 	string adres;
 	unsigned int pomieszczenia;
+	Narty *narty;
+	Snowboard *snowboard;
+	Kask *kask;
+	int ilosc_nart;
+	int ilosc_snowboardow;
+	int ilosc_kaskow;
+	
 	static size_t ilosc_wypozyczalni;
-	static size_t ilosc_nart;
-	static size_t ilosc_snowboardow;
-	static size_t ilosc_kaskow;
+	static size_t ilosc_nartG;
+	static size_t ilosc_snowboardowG;
+	static size_t ilosc_kaskowG;
 public:
 	Wypozyczalnia();
 	Wypozyczalnia(string, unsigned int);
+	Wypozyczalnia(const Wypozyczalnia &wypozyczalnia);
 	~Wypozyczalnia();
 	void dodajNarty(string nazwa_s);
 	void dodajSnowboard(string nazwa_s);
@@ -55,7 +63,7 @@ public:
 	static size_t zwrocIloscSnowboardow(void);
 	static size_t zwrocIloscKaskow(void);
 
-
+//	Wypozyczalnia operator+(const Narty &narty);
 };
 
 
