@@ -154,8 +154,33 @@ bool Narty::operator != (const Narty &narty)
 	return true;
 }
 
+bool Narty::operator ^ (const Narty &narty)
+{
+	if (dostepnosc == narty.dostepnosc)
+		return true;
+	return false;
+}
 
+Narty Narty::operator+(const Narty &narty)
+{
+	Narty c;
+	c.cena = cena + narty.cena;
+	return c;
+}
+
+
+
+/*
+void Narty::operator[](int i)
+{
+	int a;
+	a = narty.zwrocDlugosc();
+	cout << a << endl;
+}
+*/
 //operator strumieniowy
+
+
 ostream &operator << (ostream &os, const Narty &narty)
 {
 	os << "Narty: " << narty.zwrocNazwa() << endl;

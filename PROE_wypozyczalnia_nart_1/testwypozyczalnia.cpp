@@ -31,6 +31,7 @@ void starttestwypozyczalnia()
 	pierwsza.wypiszNarty();
 
 
+
 	cout << "////////////////////////" << endl;
 	cout << "Zakonczono test wypozyczalni" << endl;
 	cout << "////////////////////////" << endl << endl;

@@ -45,11 +45,15 @@ public:
 	void zmienWszystko(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s);
     static size_t zwrocIloscNart(void);
 
+
     bool operator == (const Narty &narty);
     bool operator < (const Narty &narty);
     bool operator > (const Narty &narty);
 	bool operator != (const Narty &narty);
-
+	bool operator ^ (const Narty &narty);
+	Narty operator + (const Narty &narty);
+	//void operator[](int i);
+	
 	friend ostream &operator<<(ostream& os, const Narty &narty);
 };
 

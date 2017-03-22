@@ -261,3 +261,7 @@ size_t Wypozyczalnia::zwrocIloscKaskow(void)
 {
 	return ilosc_kaskow;
 }
+
+
+
+

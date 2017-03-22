@@ -13,7 +13,7 @@ void starttestnarty()
 
 
 Narty podstawowe("salomon");
-Narty zaawansowane("fisher", 50, 170, Poziom_n::Zaawansowany, Dostepnosc_n::Dostepne);
+Narty zaawansowane("fisher", 50, 170, Poziom_n::Zaawansowany, Dostepnosc_n::Wypozyczone);
 Narty normalne("salomon");
 Narty kopiazaaw(zaawansowane);
 
@@ -72,11 +72,21 @@ cout << ">Sprawdzam, czy narty 2 i 3 maja taka sama dlugosc:" << endl;
 	else
 		cout << "Narty nie sa takie same!" << endl << endl;
 
+	cout << ">Sprawdzam, czy narty 3 sa dostepne:" << endl;
+	if (zaawansowane ^ podstawowe)
+		cout << "Narty sa dostepne!" << endl << endl;
+	else
+		cout << "Narty nie sa dostepne!" << endl << endl;
+
 
 
 cout << ">Sprawdzam dzialanie operatora <<" << endl;
-	cout << kopiazaaw << endl;
+cout << kopiazaaw << endl;
 
+
+	zaawansowane = zaawansowane + podstawowe;
+	cout << endl << ">Dodaje cene nart 1 i 2 (operator +)" << endl;
+	cout << "Cena 2 par nart:" << zaawansowane.zwrocCena() << endl << endl;
 
 
 

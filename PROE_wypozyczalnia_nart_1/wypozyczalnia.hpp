@@ -54,6 +54,8 @@ public:
 	static size_t zwrocIloscNart(void);
 	static size_t zwrocIloscSnowboardow(void);
 	static size_t zwrocIloscKaskow(void);
+
+
 };
 
 
