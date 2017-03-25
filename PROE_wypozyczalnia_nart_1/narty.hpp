@@ -25,7 +25,7 @@ private:
     unsigned int dlugosc;
     Poziom_n poziom;
 	Dostepnosc_n dostepnosc;
-    static size_t ilosc_nart;
+    static size_t ilosc_nartG;
 
 public:
 	Narty();
@@ -39,13 +39,16 @@ public:
     unsigned int zwrocDlugosc() const;
     string zwrocPoziom(void) const;
     string zwrocDostepnosc(void) const;
+	Poziom_n zwrocPoziomN(void) const;
+	Dostepnosc_n zwrocDostepnoscN(void) const;
 
     void zmienNazwe(string n_nazwa);
     void zmienCene(unsigned int n_cena);
 	void zmienWszystko(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s);
     static size_t zwrocIloscNart(void);
 
-
+	
+	void operator = (const Narty &narty);
     bool operator == (const Narty &narty);
     bool operator < (const Narty &narty);
     bool operator > (const Narty &narty);

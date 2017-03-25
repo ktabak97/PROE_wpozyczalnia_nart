@@ -5,7 +5,7 @@ using namespace std;
 #include <iomanip>
 
 
-size_t Narty::ilosc_nart = 0;
+size_t Narty::ilosc_nartG = 0;
 
 Narty::Narty()
 {
@@ -15,7 +15,7 @@ Narty::Narty()
 	poziom = Poziom_n::Poczatkujacy;
 	dostepnosc = Dostepnosc_n::Dostepne;
 
-	++ilosc_nart;
+	++ilosc_nartG;
 	DEBUG_LOG("Narty - konstruktor domyslny");
 };
 
@@ -27,7 +27,7 @@ Narty::Narty(string nazwa_s)
     poziom = Poziom_n::Poczatkujacy;
     dostepnosc = Dostepnosc_n::Dostepne;
 
-	++ilosc_nart;
+	++ilosc_nartG;
 	DEBUG_LOG("Narty - konstruktor z nazwa");
 };
 
@@ -39,7 +39,7 @@ Narty::Narty(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom
     poziom = poziom_s;
     dostepnosc = dostepnosc_s;
 
-	++ilosc_nart;
+	++ilosc_nartG;
 	DEBUG_LOG("Narty - konstruktor z parametrami");
 };
 
@@ -52,13 +52,13 @@ Narty::Narty(const Narty &narty)
     poziom = narty.poziom;
     dostepnosc = narty.dostepnosc;
 
-	++ilosc_nart;
+	++ilosc_nartG;
 	DEBUG_LOG("Narty - konstruktor kopiujacy");
 };
 
 Narty::~Narty()
 {
-	--ilosc_nart;
+	--ilosc_nartG;
 	DEBUG_LOG("Narty - destruktor");
 }
 
@@ -87,6 +87,10 @@ string Narty::zwrocPoziom(void) const
 	else
 		return "Ekspert";
 }
+Poziom_n Narty::zwrocPoziomN(void) const
+{
+	return poziom;
+}
 string Narty::zwrocDostepnosc(void) const
 {
 	if(dostepnosc == Dostepnosc_n::Dostepne)
@@ -94,7 +98,10 @@ string Narty::zwrocDostepnosc(void) const
 	else
 		return "Wypozyczone";
 }
-
+Dostepnosc_n Narty::zwrocDostepnoscN(void) const
+{
+	return dostepnosc;
+}
 void Narty::zmienNazwe(string n_nazwa)
 {
     nazwa = n_nazwa;
@@ -113,11 +120,23 @@ void Narty::zmienWszystko(string nazwa_s, unsigned int cena_s, unsigned int dlug
 }
 size_t Narty::zwrocIloscNart(void)
 {
-	return ilosc_nart;
+	return ilosc_nartG;
 }
 
 
 /////////////////////////////////////////////////////////////////////operatory
+
+void Narty::operator= (const Narty &narty)
+{
+	cout << narty.nazwa << endl;
+	nazwa = narty.nazwa;
+	cena = narty.cena; //za dzien
+	dlugosc = narty.dlugosc;
+	poziom = narty.poziom;
+	dostepnosc = narty.dostepnosc;
+	
+	DEBUG_LOG("Narty - kopiowanie");
+}
 
 //porownanie dwoch sprzetow
 bool Narty::operator == (const Narty &narty)

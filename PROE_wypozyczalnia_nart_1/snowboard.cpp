@@ -87,12 +87,20 @@ string Snowboard::zwrocPoziom(void)
 	else
 		return "Ekspert";
 }
+Poziom_s Snowboard::zwrocPoziomN(void) const
+{
+	return poziom;
+}
 string Snowboard::zwrocDostepnosc(void)
 {
 	if (dostepnosc == Dostepnosc_s::Dostepny)
-		return "Dostepne";
+		return "Dostepny";
 	else
 		return "Wypozyczone";
+}
+Dostepnosc_s Snowboard::zwrocDostepnoscN(void) const
+{
+	return dostepnosc;
 }
 
 void Snowboard::zmienNazwe(string s_nazwa)
@@ -111,6 +119,19 @@ size_t Snowboard::zwrocIloscSnowboardow(void)
 
 
 /////////////////////////////////////////////////////////////////////operatory
+
+void Snowboard::operator= (const Snowboard &snowboard)
+{
+	cout << snowboard.nazwa << endl;
+	nazwa = snowboard.nazwa;
+	cena = snowboard.cena; //za dzien
+	dlugosc = snowboard.dlugosc;
+	poziom = snowboard.poziom;
+	dostepnosc = snowboard.dostepnosc;
+
+	DEBUG_LOG("Snowboard - kopiowanie");
+}
+
 
 //porownanie dwoch sprzetow
 bool Snowboard::operator == (const Snowboard &snowboard)

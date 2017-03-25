@@ -28,12 +28,12 @@ Kask::Kask(string nazwa_k)
 	DEBUG_LOG("Kask - konstruktor z nazwa");
 };
 
-Kask::Kask(string nazwa_k, unsigned int cena_k, unsigned int srednica_k, Kolor_k poziom_k)
+Kask::Kask(string nazwa_k, unsigned int cena_k, unsigned int srednica_k, Kolor_k kolor_k)
 {
 	nazwa = nazwa_k;
 	cena = cena_k; //za dzien
 	srednica = srednica_k;
-	kolor = poziom_k;
+	kolor = kolor_k;
 
 	++ilosc_kaskow;
 	DEBUG_LOG("Kask - konstruktor z parametrami");
@@ -83,7 +83,10 @@ string Kask::zwrocKolor(void)
 	else
 		return "Niebieski";
 }
-
+Kolor_k Kask::zwrocKolorN(void) const
+{
+	return kolor;
+}
 void Kask::zmienNazwe(string k_nazwa)
 {
 	nazwa = k_nazwa;
@@ -100,6 +103,18 @@ size_t Kask::zwrocIloscKaskow(void)
 
 
 /////////////////////////////////////////////////////////////////////operatory
+
+void Kask::operator= (const Kask &kask)
+{
+	cout << kask.nazwa << endl;
+	nazwa = kask.nazwa;
+	cena = kask.cena; //za dzien
+	srednica = kask.srednica;
+	kolor = kask.kolor;
+
+	DEBUG_LOG("Kask - kopiowanie");
+}
+
 
 //porownanie dwoch sprzetow
 bool Kask::operator == (const Kask &kask)

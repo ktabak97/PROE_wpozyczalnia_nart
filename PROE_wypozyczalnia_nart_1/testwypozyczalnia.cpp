@@ -11,6 +11,7 @@ void starttestwypozyczalnia()
 	cout << "Uruchamiam test sprzetu" << endl;
 	cout << "////////////////////////" << endl << endl;
 
+
 	Wypozyczalnia pierwsza("mysliborska", 3);
 	pierwsza.wypiszWszystko();
 	pierwsza.dodajNarty("elan");
@@ -35,6 +36,7 @@ void starttestwypozyczalnia()
 
 	kopia + "rossignol";
 	kopia.wypiszNarty();
+
 
 	cout << "////////////////////////" << endl;
 	cout << "Zakonczono test wypozyczalni" << endl;

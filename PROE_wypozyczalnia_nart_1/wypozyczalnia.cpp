@@ -1,21 +1,29 @@
-using namespace std;
-
 #include "wypozyczalnia.hpp"
-#include <iostream>
-#include <iomanip>
-#include <string>
+
+using namespace std;
 
 
 size_t Wypozyczalnia::ilosc_wypozyczalni = 0;
-size_t Wypozyczalnia::ilosc_nart = 0;
-size_t Wypozyczalnia::ilosc_snowboardow = 0;
-size_t Wypozyczalnia::ilosc_kaskow = 0;
+size_t Wypozyczalnia::ilosc_nartG = 0;
+size_t Wypozyczalnia::ilosc_snowboardowG = 0;
+size_t Wypozyczalnia::ilosc_kaskowG = 0;
 
 
 Wypozyczalnia::Wypozyczalnia()
 {
 	adres = "wypozyczalniowa";
 	pomieszczenia = 1;
+	ilosc_nart = 1;
+	ilosc_snowboardow = 1;
+	ilosc_kaskow = 1;
+
+	narty = new Narty[ilosc_nart];
+	wszystkie_narty.push_back(narty);
+	snowboard = new Snowboard[ilosc_snowboardow];
+	wszystkie_snowboardy.push_back(snowboard);
+	kask = new Kask[ilosc_kaskow];
+	wszystkie_kaski.push_back(kask);
+
 	
 	++ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - konstruktor domyslny");
@@ -25,13 +33,109 @@ Wypozyczalnia::Wypozyczalnia(string nazwa_w, unsigned int pomieszczenia_w)
 {
 	adres = nazwa_w;
 	pomieszczenia = pomieszczenia_w;
+	ilosc_nart = 1;
+	ilosc_snowboardow = 1;
+	ilosc_kaskow = 1;
+
+	narty = new Narty[ilosc_nart];
+	wszystkie_narty.push_back(narty);
+	snowboard = new Snowboard[ilosc_snowboardow];
+	wszystkie_snowboardy.push_back(snowboard);
+	kask = new Kask[ilosc_kaskow];
+	wszystkie_kaski.push_back(kask);
+
 
 	++ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - konstruktor z parametrami");
 };
 
+
+Wypozyczalnia::Wypozyczalnia(const Wypozyczalnia &wypozyczalnia)
+{  
+	adres = wypozyczalnia.adres;
+	pomieszczenia = wypozyczalnia.pomieszczenia;
+
+	{
+		string nazwa_s;
+		unsigned int cena_s, dlugosc_s;
+		Poziom_n poziom_s;
+		Dostepnosc_n dostepnosc_s;
+		
+		if (wypozyczalnia.narty != nullptr)
+		{
+			narty = new Narty[wypozyczalnia.wszystkie_narty.size()];
+
+			for (int i = 0; i < wypozyczalnia.wszystkie_narty.size(); i++)
+			{
+				nazwa_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa();
+				cena_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocCena();
+				dlugosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc();
+				poziom_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziomN();
+				dostepnosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnoscN();
+
+				this->dodajNarty(nazwa_s, cena_s, dlugosc_s, poziom_s, dostepnosc_s);
+			}
+
+		}
+		else
+			narty = nullptr;
+	}
+	{
+		string nazwa_s;
+		unsigned int cena_s, dlugosc_s;
+		Poziom_s poziom_s;
+		Dostepnosc_s dostepnosc_s;
+
+		if (wypozyczalnia.snowboard != nullptr)
+		{
+			snowboard = new Snowboard[wypozyczalnia.wszystkie_snowboardy.size()];
+
+			for (int i = 0; i < wypozyczalnia.wszystkie_snowboardy.size(); i++)
+			{
+				nazwa_s = wypozyczalnia.wszystkie_snowboardy.at(i)->zwrocNazwa();
+				cena_s = wypozyczalnia.wszystkie_snowboardy.at(i)->zwrocCena();
+				dlugosc_s = wypozyczalnia.wszystkie_snowboardy.at(i)->zwrocDlugosc();
+				poziom_s = wypozyczalnia.wszystkie_snowboardy.at(i)->zwrocPoziomN();
+				dostepnosc_s = wypozyczalnia.wszystkie_snowboardy.at(i)->zwrocDostepnoscN();
+
+				this->dodajSnowboard(nazwa_s, cena_s, dlugosc_s, poziom_s, dostepnosc_s);
+			}
+
+		}
+		else
+			snowboard = nullptr;
+	}
+	{
+		string nazwa_k;
+		unsigned int cena_k, srednica_k;
+		Kolor_k kolor_k;
+
+		if (wypozyczalnia.kask != nullptr)
+		{
+			kask = new Kask[wypozyczalnia.wszystkie_kaski.size()];
+			for (int i = 0; i < wypozyczalnia.wszystkie_kaski.size(); i++)
+			{
+				nazwa_k = wypozyczalnia.wszystkie_kaski.at(i)->zwrocNazwa();
+				cena_k = wypozyczalnia.wszystkie_kaski.at(i)->zwrocCena();
+				srednica_k = wypozyczalnia.wszystkie_kaski.at(i)->zwrocSrednica();
+				kolor_k = wypozyczalnia.wszystkie_kaski.at(i)->zwrocKolorN();
+
+				this->dodajKask(nazwa_k, cena_k, srednica_k, kolor_k);
+			}
+		}
+		else
+			kask = nullptr;
+	}
+	DEBUG_LOG("Wypozyczalnia - konstruktor kopiujacy");
+		++ilosc_wypozyczalni;
+}
+	
+
 Wypozyczalnia::~Wypozyczalnia()
 {
+	delete[] narty;
+	delete[] snowboard;
+	delete[] kask;
 	--ilosc_wypozyczalni;
 	DEBUG_LOG("Wypozyczalnia - destruktor");
 }
@@ -63,9 +167,27 @@ void Wypozyczalnia::dodajSnowboard(string nazwa_s)
 	++ilosc_snowboardow;
 }
 
+void Wypozyczalnia::dodajSnowboard(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_s poziom_s, Dostepnosc_s dostepnosc_s)
+{
+	Snowboard *snowboard = new Snowboard(nazwa_s, cena_s, dlugosc_s, poziom_s, dostepnosc_s);
+	wszystkie_snowboardy.push_back(snowboard);
+	cout << "Dodalem snowboard: " << nazwa_s << endl;
+
+	++ilosc_snowboardow;
+}
+
 void Wypozyczalnia::dodajKask(string nazwa_k)
 {
 	Kask *kask = new Kask(nazwa_k);
+	wszystkie_kaski.push_back(kask);
+	cout << "Dodalem kask: " << nazwa_k << endl;
+
+	++ilosc_kaskow;
+}
+
+void Wypozyczalnia::dodajKask(string nazwa_k, unsigned int cena_k, unsigned int srednica_k, Kolor_k poziom_k)
+{
+	Kask *kask = new Kask(nazwa_k, cena_k, srednica_k, poziom_k);
 	wszystkie_kaski.push_back(kask);
 	cout << "Dodalem kask: " << nazwa_k << endl;
 
@@ -251,17 +373,22 @@ size_t Wypozyczalnia::zwrocIloscWypozyczalni(void)
 
 size_t Wypozyczalnia::zwrocIloscNart(void)
 {
-	return ilosc_nart;
+	return ilosc_nartG;
 }
 size_t Wypozyczalnia::zwrocIloscSnowboardow(void)
 {
-	return ilosc_snowboardow;
+	return ilosc_snowboardowG;
 }
 size_t Wypozyczalnia::zwrocIloscKaskow(void)
 {
-	return ilosc_kaskow;
+	return ilosc_kaskowG;
 }
 
+void Wypozyczalnia::operator+(string nazwa_s)
+{
+	Narty *narty = new Narty(nazwa_s);
+	wszystkie_narty.push_back(narty);
+	cout << "Dodalem narte: " << nazwa_s << endl;
 
-
-
+	++ilosc_nart;
+}
