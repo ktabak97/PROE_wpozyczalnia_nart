@@ -37,6 +37,7 @@ public:
 	unsigned int zwrocCena();
 	unsigned int zwrocSrednica();
 	string zwrocKolor(void);
+	Kolor_k zwrocKolorN(void) const;
 
 	void zmienNazwe(string k_nazwa);
 	void zmienCene(unsigned int k_cena);
@@ -44,7 +45,7 @@ public:
 
 	bool operator == (const Kask &kask);
 	bool operator << (const Kask &kask);
-
+	void operator= (const Kask &kask);
 };
 
 #endif KASK_HPP// _DEBUG

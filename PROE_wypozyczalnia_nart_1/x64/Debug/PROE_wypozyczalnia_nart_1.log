@@ -1,0 +1,15 @@
+﻿  wypozyczalnia.cpp
+c:\users\krzysiek\source\repos\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(230): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+c:\users\krzysiek\source\repos\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(236): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+c:\users\krzysiek\source\repos\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(242): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+  testwypozyczalnia.cpp
+  testsnowboard.cpp
+  testnarty.cpp
+  testkask.cpp
+  snowboard.cpp
+  narty.cpp
+  main.cpp
+  kask.cpp
+  Generowanie kodu...
+  PROE_wypozyczalnia_nart_1.vcxproj -> C:\Users\Krzysiek\Source\Repos\PROE_wpozyczalnia_nart\x64\Debug\PROE_wypozyczalnia_nart_1.exe
+  PROE_wypozyczalnia_nart_1.vcxproj -> C:\Users\Krzysiek\Source\Repos\PROE_wpozyczalnia_nart\x64\Debug\PROE_wypozyczalnia_nart_1.pdb (Partial PDB)

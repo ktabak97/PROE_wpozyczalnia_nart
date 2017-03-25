@@ -39,6 +39,8 @@ public:
 	unsigned int zwrocDlugosc();
 	string zwrocPoziom(void);
 	string zwrocDostepnosc(void);
+	Poziom_s zwrocPoziomN(void) const;
+	Dostepnosc_s zwrocDostepnoscN(void) const;
 
 	void zmienNazwe(string s_nazwa);
 	void zmienCene(unsigned int s_cena);
@@ -47,7 +49,7 @@ public:
 	bool operator == (const Snowboard &snowboard);
 	bool operator << (const Snowboard &snowboard);
 	bool operator >> (const Snowboard &snowboard);
-
+	void operator= (const Snowboard &snowboard);
 };
 
 #endif SNOWBOARD_HPP// _DEBUG
