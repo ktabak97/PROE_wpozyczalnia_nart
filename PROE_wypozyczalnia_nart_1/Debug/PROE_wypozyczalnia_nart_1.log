@@ -2,5 +2,15 @@
 e:\downloads\proe_wpozyczalnia_nart-20170325t122239z-001\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(68): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 e:\downloads\proe_wpozyczalnia_nart-20170325t122239z-001\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(93): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 e:\downloads\proe_wpozyczalnia_nart-20170325t122239z-001\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(116): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  testwypozyczalnia.cpp
+  testsnowboard.cpp
+  testnarty.cpp
+  testkask.cpp
+  snowboard.cpp
+  narty.cpp
+  main.cpp
+  kask.cpp
+  Generowanie kodu...
+  LINK : nie znaleziono elementu E:\Downloads\PROE_wpozyczalnia_nart-20170325T122239Z-001\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
   PROE_wypozyczalnia_nart_1.vcxproj -> E:\Downloads\PROE_wpozyczalnia_nart-20170325T122239Z-001\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.exe
   PROE_wypozyczalnia_nart_1.vcxproj -> E:\Downloads\PROE_wpozyczalnia_nart-20170325T122239Z-001\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.pdb (Partial PDB)
