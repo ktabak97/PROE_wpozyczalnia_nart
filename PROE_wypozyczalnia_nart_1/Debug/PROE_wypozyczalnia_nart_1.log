@@ -1,16 +1,1 @@
-﻿  wypozyczalnia.cpp
-e:\szkoła\studnia\proe\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(68): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-e:\szkoła\studnia\proe\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(93): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-e:\szkoła\studnia\proe\proe_wpozyczalnia_nart\proe_wypozyczalnia_nart_1\wypozyczalnia.cpp(116): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  testwypozyczalnia.cpp
-  testsnowboard.cpp
-  testnarty.cpp
-  testkask.cpp
-  snowboard.cpp
-  narty.cpp
-  main.cpp
-  kask.cpp
-  Generowanie kodu...
-  LINK : nie znaleziono elementu E:\Szkoła\STUDNIA\PROE\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
-  PROE_wypozyczalnia_nart_1.vcxproj -> E:\Szkoła\STUDNIA\PROE\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.exe
-  PROE_wypozyczalnia_nart_1.vcxproj -> E:\Szkoła\STUDNIA\PROE\PROE_wpozyczalnia_nart\Debug\PROE_wypozyczalnia_nart_1.pdb (Partial PDB)
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141\Toolset.targets(34,5): error MSB8036: Nie znaleziono zestawu Windows SDK w wersji 10.0.14393.0. Zainstaluj wymaganą wersję zestawu Windows SDK lub zmień wersję zestawu SDK na stronach właściwości projektu albo klikając prawym przyciskiem myszy rozwiązanie i wybierając pozycję „Wskaż ponownie rozwiązanie”.
