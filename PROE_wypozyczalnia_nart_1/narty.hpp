@@ -10,6 +10,8 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <fstream>
 
 using namespace std;
 
@@ -46,7 +48,9 @@ public:
     void zmienCene(unsigned int n_cena);
 	void zmienWszystko(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s);
     static size_t zwrocIloscNart(void);
-
+	void zapisz(Narty &nartyN);
+	void wczytaj(Narty &nartyN);
+	void wypiszNarty();
 	
 	void operator = (const Narty &narty);
     bool operator == (const Narty &narty);
@@ -57,7 +61,8 @@ public:
 	Narty operator + (const Narty &narty);
 	//void operator[](int i);
 	
-	friend ostream &operator<<(ostream& os, const Narty &narty);
+	friend ostream& operator << (ostream& n, Narty &nartyN);
+	friend istream& operator >> (istream& n, Narty &nartyN);
 };
 
 #endif NARTY_HPP// _DEBUG

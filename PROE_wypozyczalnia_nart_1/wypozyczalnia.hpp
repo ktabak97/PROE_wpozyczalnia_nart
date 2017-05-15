@@ -13,6 +13,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <fstream>
 #include <vector>
 
 
@@ -25,6 +26,7 @@ private:
 	vector <Narty*> wszystkie_narty;
 	int ilosc_nart;
 	Narty *narty;
+	Narty nartyN;
 	static size_t ilosc_wypozyczalni;
 	static size_t ilosc_nartG;
 
@@ -39,10 +41,16 @@ public:
 	void wypiszWszystko();
 	virtual int liczbaNart();
 	void usunNarte(string nazwa_n);
+	void zapisz(Wypozyczalnia &wypozyczalnia);
+	void wczytaj(Wypozyczalnia &wypozyczalnia);
+	void wypiszPlikowe();
+	
 	static size_t zwrocIloscWypozyczalni(void);
 	static size_t zwrocIloscNart(void);
 
 	void operator+(string nazwa_s);
+	friend ostream& operator << (ostream &w, Wypozyczalnia &wypozyczalnia);
+	friend istream& operator >> (istream &w, Wypozyczalnia &wypozyczalnia);
 };
 
 

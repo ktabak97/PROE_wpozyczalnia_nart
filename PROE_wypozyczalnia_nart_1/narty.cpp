@@ -1,11 +1,9 @@
 using namespace std;
 
 #include "narty.hpp"
-#include <iostream>
-#include <iomanip>
-
 
 size_t Narty::ilosc_nartG = 0;
+string nazwapliku_n = "narty1.txt";
 
 Narty::Narty()
 {
@@ -188,25 +186,51 @@ Narty Narty::operator+(const Narty &narty)
 }
 
 
-
-/*
-void Narty::operator[](int i)
+void Narty::wypiszNarty()
 {
-	int a;
-	a = narty.zwrocDlugosc();
-	cout << a << endl;
-}
-*/
-//operator strumieniowy
-
-
-ostream &operator << (ostream &os, const Narty &narty)
-{
-	os << "Narty: " << narty.zwrocNazwa() << endl;
-	os << "Cena: " << narty.zwrocCena() << endl;
-	os << "Dlugosc: " << narty.zwrocDlugosc() << endl;
-	os << "Poziom: " << narty.zwrocPoziom() << endl;
-	os << "Dostepnosc: " << narty.zwrocDostepnosc() << endl;
-	return os;
+	cout << "LISTA WSZYSTKICH SPRZETOW Z PARAMETRAMI" << endl << endl;
+	cout << "NARTY:" << endl << endl;
+	for (int i = 0; i < ilosc_nartG-1; i++)
+	{
+		cout << i + 1 << "." << endl;
+		cout << "Nazwa:" << zwrocNazwa() << endl;
+		cout << "Cena:" << zwrocCena() << endl;
+		cout << "Dlugosc:" << zwrocDlugosc() << endl;
+		cout << "Poziom:" << zwrocPoziom() << endl;
+		cout << "Dostepnosc:" << zwrocDostepnosc(); cout << endl << endl;
+	}
 }
 
+void Narty::zapisz(Narty &nartyN)
+{
+	ofstream plik(nazwapliku_n);
+	plik << nartyN;
+	plik.close();
+
+
+	DEBUG_LOG("Narty - zapisano do pliku");
+}
+
+void Narty::wczytaj(Narty &nartyN)
+{
+	ifstream plik(nazwapliku_n);
+	plik >> nartyN;
+	plik.close();
+
+
+	DEBUG_LOG("Narty - wczytano z pliku");
+}
+
+ostream& operator << (ostream &n, Narty &nartyN)
+{
+	n << nartyN.nazwa << " " << nartyN.cena << " " << nartyN.dlugosc << " " <<
+		nartyN.zwrocPoziom() << " " << nartyN.zwrocDostepnosc() << endl;
+	return n;
+}
+
+istream &operator >> (istream &n, Narty &nartyN)
+{
+	n >> nartyN.nazwa >> nartyN.cena >> nartyN.dlugosc >>
+		nartyN.zwrocPoziom() >> nartyN.zwrocDostepnosc();
+	return n;
+}

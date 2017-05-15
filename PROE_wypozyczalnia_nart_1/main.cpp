@@ -5,6 +5,8 @@ using namespace std;
 #include <algorithm>
 
 #include "testwypozyczalnia.hpp"
+#include "wypozyczalnia.hpp"
+#include "narty.hpp"
 
 void starttestwypozyczalnia(void);
 
@@ -12,6 +14,7 @@ void starttestwypozyczalnia(void);
 int main(void)
 {
     int wybor;
+	Wypozyczalnia pierwsza;
     do
     {
 		cout << "^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
@@ -27,7 +30,19 @@ int main(void)
             case 2:
                 return 0;
                 break;
-            default:
+			case 3:
+				pierwsza.zapisz(pierwsza);
+				break;
+			case 4:
+				pierwsza.wczytaj(pierwsza);
+				break;
+			case 5:
+				pierwsza.zmienIloscPomieszczen(5);
+				break;
+			case 6:	
+				pierwsza.wypiszPlikowe();
+				break;
+			default:
                 cout << "Wybierz wlasciwy numer:" << endl;
                 cin.clear();
                 cin.get();

@@ -6,6 +6,7 @@ using namespace std;
 size_t Wypozyczalnia::ilosc_wypozyczalni = 0;
 size_t Wypozyczalnia::ilosc_nartG = 0;
 
+string nazwapliku_w = "wypozyczalnia1.txt";
 
 void Wypozyczalnia::zmienIloscPomieszczen(unsigned int iloscpomieszczen)
 {
@@ -124,7 +125,15 @@ void Wypozyczalnia::wypiszWszystko()
 	}
 }
 
+void Wypozyczalnia::wypiszPlikowe()
+{
+	cout << endl;
+	cout << "Typ lokalu:" << typ_lokalu << endl;
+	cout << "Adres lokalu:" << adres << endl;
+	cout << "Ilosc pomieszczen:" << pomieszczenia << endl;
 
+	narty->wypiszNarty();
+}
 
 void Wypozyczalnia::usunNarte(string nazwa_n)
 {
@@ -172,4 +181,37 @@ void Wypozyczalnia::operator+(string nazwa_s)
 	cout << "Dodalem narte: " << nazwa_s << endl;
 
 	++ilosc_nart;
+}
+
+void Wypozyczalnia::zapisz(Wypozyczalnia &wypozyczalnia)
+{
+	ofstream plik(nazwapliku_w);
+	plik << wypozyczalnia;
+	plik.close();
+	wypozyczalnia.nartyN.zapisz(wypozyczalnia.nartyN);
+
+	DEBUG_LOG("Wypozyczalnia - zapisano do pliku");
+}
+
+void Wypozyczalnia::wczytaj(Wypozyczalnia &wypozyczalnia)
+{
+	ifstream plik(nazwapliku_w);
+	plik >> wypozyczalnia;
+	plik.close();
+	wypozyczalnia.nartyN.wczytaj(wypozyczalnia.nartyN);
+
+	DEBUG_LOG("Wypozyczalnia - wczytano z pliku");
+}
+
+ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
+{
+	w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " << 
+		wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << endl;
+	return w;
+}
+
+istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
+{
+	w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart;
+	return w;
 }

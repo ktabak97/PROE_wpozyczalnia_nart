@@ -15,11 +15,17 @@ void starttestwypozyczalnia()
 
 
 	Wypozyczalnia pierwsza("mysliborska", 3);
-	pierwsza.wypiszWszystko();
+	//pierwsza.wypiszWszystko();
 
-	WypozyczalniaNartZawodniczych zawodnicza;
-	zawodnicza.dodajNarty("Fisher WC");
-	zawodnicza.wypiszWszystko();
+	//WypozyczalniaNartZawodniczych zawodnicza;
+	//zawodnicza.dodajNarty("Fisher WC");
+	//zawodnicza.wypiszWszystko();	
+	pierwsza.dodajNarty("Volkl");
+
+	pierwsza.zapisz(pierwsza);
+
+	pierwsza.wczytaj(pierwsza);
+	pierwsza.wypiszWszystko();
 
 
 	//pierwsza.wypiszWszystko();
