@@ -1,5 +1,6 @@
 #include "wypozyczalnia.hpp"
 #include "sklep.hpp"
+#include "wypnartzawod.hpp"
 #include "testwypozyczalnia.hpp"
 
 
@@ -15,10 +16,11 @@ void starttestwypozyczalnia()
 
 	Wypozyczalnia pierwsza("mysliborska", 3);
 	pierwsza.wypiszWszystko();
-	Sklep drogi;
-	drogi.wypiszWszystko();
-	pierwsza.dodajNarty("dynastar");
-	pierwsza.wypiszWszystko();
+
+	WypozyczalniaNartZawodniczych zawodnicza;
+	zawodnicza.dodajNarty("Fisher WC");
+	zawodnicza.wypiszWszystko();
+
 
 	//pierwsza.wypiszWszystko();
 	//pierwsza.dodajNarty("elan");

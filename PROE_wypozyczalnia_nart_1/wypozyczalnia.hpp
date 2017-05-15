@@ -22,9 +22,9 @@ using namespace std;
 class Wypozyczalnia : public CentrumNarciarskie
 {
 private:
-	Narty *narty;
-	int ilosc_nart;
 	vector <Narty*> wszystkie_narty;
+	int ilosc_nart;
+	Narty *narty;
 	static size_t ilosc_wypozyczalni;
 	static size_t ilosc_nartG;
 
@@ -37,7 +37,7 @@ public:
 	void dodajNarty(string nazwa_s);
 	void dodajNarty(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s);
 	void wypiszWszystko();
-	int liczbaNart();
+	virtual int liczbaNart();
 	void usunNarte(string nazwa_n);
 	static size_t zwrocIloscWypozyczalni(void);
 	static size_t zwrocIloscNart(void);

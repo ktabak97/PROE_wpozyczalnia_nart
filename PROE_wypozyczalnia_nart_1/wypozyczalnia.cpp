@@ -14,8 +14,8 @@ void Wypozyczalnia::zmienIloscPomieszczen(unsigned int iloscpomieszczen)
 
 Wypozyczalnia::Wypozyczalnia()
 {
-	typ_lokalu = "Wypozyczalnia";
-	adres = "wypozyczalniowa";
+	typ_lokalu = "Wszechstronna wypozyczalnia";
+	adres = "Wypozyczalniowa";
 	pomieszczenia = 1;
 	ilosc_nart = 1;
 
