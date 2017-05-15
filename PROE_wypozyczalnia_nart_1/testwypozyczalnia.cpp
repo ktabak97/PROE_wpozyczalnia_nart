@@ -21,7 +21,7 @@ void starttestwypozyczalnia()
 	//zawodnicza.dodajNarty("Fisher WC");
 	//zawodnicza.wypiszWszystko();	
 	pierwsza.dodajNarty("Volkl");
-
+	pierwsza.dodajNarty("Blizzard");
 	pierwsza.zapisz(pierwsza);
 
 	pierwsza.wczytaj(pierwsza);

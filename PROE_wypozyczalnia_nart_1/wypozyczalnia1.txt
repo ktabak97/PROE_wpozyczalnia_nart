@@ -1,1 +1,3 @@
-Wypozyczalnia mysliborska 3 2
+Wypozyczalnia mysliborska 3 3 nartypodstawowe 30 160 Poczatkujacy Dostepne
+Wypozyczalnia mysliborska 3 3 Volkl 30 160 Poczatkujacy Dostepne
+Wypozyczalnia mysliborska 3 3 Blizzard 30 160 Poczatkujacy Dostepne

@@ -188,30 +188,93 @@ void Wypozyczalnia::zapisz(Wypozyczalnia &wypozyczalnia)
 	ofstream plik(nazwapliku_w);
 	plik << wypozyczalnia;
 	plik.close();
-	wypozyczalnia.nartyN.zapisz(wypozyczalnia.nartyN);
+//	wypozyczalnia.nartyN.zapisz(wypozyczalnia.nartyN);
 
 	DEBUG_LOG("Wypozyczalnia - zapisano do pliku");
 }
+//void Wypozyczalnia::zapisz(Wypozyczalnia &wypozyczalnia)
+//{
+//	fstream plik("wypozyczalnia.txt", ios::in | ios::out | ios::app);
+//	plik<<((char*)& wszystkie_narty[0], wszystkie_narty.size() * sizeof(int));
+//	plik.close();
+//
+//
+//
+//	typ_lokalu = wypozyczalnia.typ_lokalu;
+//	adres = wypozyczalnia.adres;
+//	pomieszczenia = wypozyczalnia.pomieszczenia;
+//
+//	{
+//		string nazwa_s;
+//		unsigned int cena_s, dlugosc_s;
+//		Poziom_n poziom_s;
+//		Dostepnosc_n dostepnosc_s;
+//
+//		if (wypozyczalnia.narty != nullptr)
+//		{
+//			narty = new Narty[wypozyczalnia.wszystkie_narty.size()];
+//
+//			for (int i = 0; i < wypozyczalnia.wszystkie_narty.size(); i++)
+//			{
+//				nazwa_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa();
+//				cena_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocCena();
+//				dlugosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc();
+//				poziom_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziomN();
+//				dostepnosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnoscN();
+//
+//				this->dodajNarty(nazwa_s, cena_s, dlugosc_s, poziom_s, dostepnosc_s);
+//			}
+//
+//		}
+//		else
+//			narty = nullptr;
+//	}
+//}
 
 void Wypozyczalnia::wczytaj(Wypozyczalnia &wypozyczalnia)
 {
 	ifstream plik(nazwapliku_w);
 	plik >> wypozyczalnia;
 	plik.close();
-	wypozyczalnia.nartyN.wczytaj(wypozyczalnia.nartyN);
+//	wypozyczalnia.nartyN.wczytaj(wypozyczalnia.nartyN);
 
 	DEBUG_LOG("Wypozyczalnia - wczytano z pliku");
 }
 
+//ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
+//{
+//	w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " << 
+//		wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << endl;
+//	return w;
+//}
+
 ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
 {
-	w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " << 
-		wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << endl;
+	for (int i = 0; i < wypozyczalnia.wszystkie_narty.size(); i++)
+	{
+		w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " <<
+			wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << " " <<
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() << " " <<
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() << " " <<
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc() <<	endl;
+	}
 	return w;
 }
 
+//istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
+//{
+//	w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart;
+//	return w;
+//}
+
 istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
 {
-	w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart;
+	for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
+	{
+		w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart >>
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwe() >> wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() >>
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() >> wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() >>
+			wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc();
+	}
 	return w;
 }
