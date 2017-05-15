@@ -15,10 +15,10 @@ void starttestwypozyczalnia()
 
 	Wypozyczalnia pierwsza("mysliborska", 3);
 	pierwsza.wypiszWszystko();
-	pierwsza.zmienIloscPomieszczen(7);
-	pierwsza.wypiszWszystko();
 	Sklep drogi;
 	drogi.wypiszWszystko();
+	pierwsza.dodajNarty("dynastar");
+	pierwsza.wypiszWszystko();
 
 	//pierwsza.wypiszWszystko();
 	//pierwsza.dodajNarty("elan");

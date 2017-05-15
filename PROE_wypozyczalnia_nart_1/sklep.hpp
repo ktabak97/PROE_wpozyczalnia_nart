@@ -8,8 +8,6 @@
 #endif
 
 #include "narty.hpp"
-#include "snowboard.hpp"
-#include "kask.hpp"
 #include "centrumnarciarskie.hpp"
 
 #include <iostream>

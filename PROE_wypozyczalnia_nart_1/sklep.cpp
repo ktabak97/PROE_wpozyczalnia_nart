@@ -17,10 +17,10 @@ Sklep::~Sklep()
 void Sklep::wypiszWszystko()
 {
 	cout << endl;
-	cout << "To jest sklepik" << typ_lokalu << endl;
-	cout << "Typ lokalu:" << typ_lokalu << endl;
-	cout << "Adres lokalu:" << adres << endl;
-	cout << "Ilosc pomieszczen:" << pomieszczenia << endl;
+	cout << "To jest sklepik" << endl;
+	cout << "Typ lokalu: " << typ_lokalu << endl;
+	cout << "Adres lokalu: " << adres << endl;
+	cout << "Ilosc pomieszczen: " << pomieszczenia << endl;
 
 	cout << "LISTA WSZYSTKICH SPRZETOW Z PARAMETRAMI" << endl << endl;
 
