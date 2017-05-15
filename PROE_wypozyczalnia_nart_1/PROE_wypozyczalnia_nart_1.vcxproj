@@ -111,9 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="centrumnarciarskie.cpp" />
+    <ClCompile Include="dzialnarciarski.cpp" />
     <ClCompile Include="kask.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="narty.cpp" />
+    <ClCompile Include="sklep.cpp" />
     <ClCompile Include="snowboard.cpp" />
     <ClCompile Include="testkask.cpp" />
     <ClCompile Include="testnarty.cpp" />
@@ -122,8 +125,11 @@
     <ClCompile Include="wypozyczalnia.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="centrumnarciarskie.hpp" />
+    <ClInclude Include="dzialnarciarski.hpp" />
     <ClInclude Include="kask.hpp" />
     <ClInclude Include="narty.hpp" />
+    <ClInclude Include="sklep.hpp" />
     <ClInclude Include="snowboard.hpp" />
     <ClInclude Include="testkask.hpp" />
     <ClInclude Include="testnarty.hpp" />

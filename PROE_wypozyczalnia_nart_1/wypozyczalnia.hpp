@@ -10,6 +10,7 @@
 #include "narty.hpp"
 #include "snowboard.hpp"
 #include "kask.hpp"
+#include "centrumnarciarskie.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -20,11 +21,9 @@
 using namespace std;
 
 
-class Wypozyczalnia
+class Wypozyczalnia : public CentrumNarciarskie
 {
 private:
-	string adres;
-	unsigned int pomieszczenia;
 	Narty *narty;
 	Snowboard *snowboard;
 	Kask *kask;
@@ -44,6 +43,7 @@ public:
 	Wypozyczalnia(string, unsigned int);
 	Wypozyczalnia(const Wypozyczalnia &wypozyczalnia);
 	~Wypozyczalnia();
+	void zmienIloscPomieszczen(unsigned int iloscpomieszczen);
 	void dodajNarty(string nazwa_s);
 	void dodajSnowboard(string nazwa_s);
 	void dodajKask(string nazwa_k);

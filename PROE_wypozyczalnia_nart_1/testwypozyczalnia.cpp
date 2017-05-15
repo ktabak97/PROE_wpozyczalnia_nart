@@ -1,4 +1,5 @@
 #include "wypozyczalnia.hpp"
+#include "sklep.hpp"
 #include "testwypozyczalnia.hpp"
 
 
@@ -14,28 +15,34 @@ void starttestwypozyczalnia()
 
 	Wypozyczalnia pierwsza("mysliborska", 3);
 	pierwsza.wypiszWszystko();
-	pierwsza.dodajNarty("elan");
-	pierwsza.dodajNarty("dynastar");
-	pierwsza.dodajNarty("volkl", 39, 158, Poziom_n::Zaawansowany, Dostepnosc_n::Dostepne);
-	pierwsza.dodajSnowboard("burton");
-	pierwsza.dodajKask("uvex");
-	pierwsza.dodajSnowboard("K2", 47, 145, Poziom_s::Ekspert, Dostepnosc_s::Wypozyczony);
-	pierwsza.dodajKask("atomic", 17, 52, Kolor_k::Czerwony);
-	
+	pierwsza.zmienIloscPomieszczen(7);
 	pierwsza.wypiszWszystko();
+	Sklep drogi;
+	drogi.wypiszWszystko();
 
-	pierwsza.usunNarte("dynastar");
-	pierwsza.usunKask("uvex");
-	pierwsza.usunSnowboard("brton");
+	//pierwsza.wypiszWszystko();
+	//pierwsza.dodajNarty("elan");
+	//pierwsza.dodajNarty("dynastar");
+	//pierwsza.dodajNarty("volkl", 39, 158, Poziom_n::Zaawansowany, Dostepnosc_n::Dostepne);
+	//pierwsza.dodajSnowboard("burton");
+	//pierwsza.dodajKask("uvex");
+	//pierwsza.dodajSnowboard("K2", 47, 145, Poziom_s::Ekspert, Dostepnosc_s::Wypozyczony);
+	//pierwsza.dodajKask("atomic", 17, 52, Kolor_k::Czerwony);
+	//
+	//pierwsza.wypiszWszystko();
 
-	pierwsza.wypiszNarty();
+	//pierwsza.usunNarte("dynastar");
+	//pierwsza.usunKask("uvex");
+	//pierwsza.usunSnowboard("brton");
 
-	Wypozyczalnia kopia(pierwsza);
-	kopia.dodajNarty("atomic");
-	kopia.wypiszWszystko();
+	//pierwsza.wypiszNarty();
 
-	kopia + "rossignol";
-	kopia.wypiszNarty();
+	//Wypozyczalnia kopia(pierwsza);
+	//kopia.dodajNarty("atomic");
+	//kopia.wypiszWszystko();
+
+	//kopia + "rossignol";
+	//kopia.wypiszNarty();
 
 
 	cout << "////////////////////////" << endl;

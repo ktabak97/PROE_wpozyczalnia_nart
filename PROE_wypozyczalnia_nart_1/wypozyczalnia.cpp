@@ -8,9 +8,14 @@ size_t Wypozyczalnia::ilosc_nartG = 0;
 size_t Wypozyczalnia::ilosc_snowboardowG = 0;
 size_t Wypozyczalnia::ilosc_kaskowG = 0;
 
+void Wypozyczalnia::zmienIloscPomieszczen(unsigned int iloscpomieszczen)
+{
+	pomieszczenia = iloscpomieszczen;
+}
 
 Wypozyczalnia::Wypozyczalnia()
 {
+	typ_lokalu = "Wypozyczalnia";
 	adres = "wypozyczalniowa";
 	pomieszczenia = 1;
 	ilosc_nart = 1;
@@ -31,6 +36,7 @@ Wypozyczalnia::Wypozyczalnia()
 
 Wypozyczalnia::Wypozyczalnia(string nazwa_w, unsigned int pomieszczenia_w)
 {
+	typ_lokalu = "Wypozyczalnia";
 	adres = nazwa_w;
 	pomieszczenia = pomieszczenia_w;
 	ilosc_nart = 1;
@@ -52,6 +58,7 @@ Wypozyczalnia::Wypozyczalnia(string nazwa_w, unsigned int pomieszczenia_w)
 
 Wypozyczalnia::Wypozyczalnia(const Wypozyczalnia &wypozyczalnia)
 {  
+	typ_lokalu = wypozyczalnia.typ_lokalu;
 	adres = wypozyczalnia.adres;
 	pomieszczenia = wypozyczalnia.pomieszczenia;
 
@@ -240,6 +247,11 @@ void Wypozyczalnia::wypiszKaski()
 
 void Wypozyczalnia::wypiszWszystko()
 {
+	cout << endl;
+	cout << "Typ lokalu:" << typ_lokalu << endl;
+	cout << "Adres lokalu:" << adres << endl;
+	cout << "Ilosc pomieszczen:" << pomieszczenia << endl;
+
 	cout << "LISTA WSZYSTKICH SPRZETOW Z PARAMETRAMI" << endl << endl;
 	cout << "NARTY:" << endl << endl;
 	int ln = liczbaNart();
