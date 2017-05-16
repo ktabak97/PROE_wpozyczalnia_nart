@@ -221,14 +221,14 @@ void Narty::wczytaj(Narty &nartyN)
 	DEBUG_LOG("Narty - wczytano z pliku");
 }
 
-ostream& operator << (ostream &n, Narty &nartyN)
+ostream & operator << (ostream &w, Narty &narty)
 {
-	n << nartyN.nazwa << " " << nartyN.cena << " " << nartyN.dlugosc << " " <<
-		nartyN.zwrocPoziom() << " " << nartyN.zwrocDostepnosc() << endl;
-	return n;
+	w << narty.nazwa << " " << narty.cena << " " << narty.dlugosc << " " <<
+		narty.zwrocPoziom() << " " << narty.zwrocDostepnosc() << endl;
+	return w;
 }
 
-istream &operator >> (istream &w, Narty &narty)
+istream & operator >> (istream &w, Narty &narty)
 {
 	w >> narty.nazwa >> narty.cena >> narty.dlugosc >>
 		narty.zwrocPoziom() >> narty.zwrocDostepnosc();

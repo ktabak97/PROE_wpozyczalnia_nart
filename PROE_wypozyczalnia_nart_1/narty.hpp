@@ -22,6 +22,7 @@ enum class Dostepnosc_n{Dostepne, Wypozyczone};
 class Narty
 {
 private:
+	Narty* narty;
     string nazwa;
     unsigned int cena;
     unsigned int dlugosc;
@@ -61,7 +62,7 @@ public:
 	Narty operator + (const Narty &narty);
 	//void operator[](int i);
 	
-	friend ostream& operator << (ostream& n, Narty &nartyN);
+	friend ostream& operator << (ostream& w, Narty &narty);
 	friend istream& operator >> (istream& w, Narty &narty);
 };
 

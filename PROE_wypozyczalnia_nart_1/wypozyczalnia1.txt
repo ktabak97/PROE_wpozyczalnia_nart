@@ -1,9 +1,3 @@
-Wszechstronna wypozyczalnia 1 3 nartypcgcjhfjhcodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
-Wszechstronna wypozyczalnia 1 3 nartypodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
-Wszechstronna wypozyczalnia 1 3 nartypodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
-nartypodstawowe 30 160 Poczatkujacy Dostepne
+Wypozyczalnia mysliborska 3 3 nartypodstawowe 30 160 Poczatkujacy Dostepne
+Volklekurdenodziala 30 160 Poczatkujacy Dostepne
+Blizzard 30 160 Poczatkujacy Dostepne

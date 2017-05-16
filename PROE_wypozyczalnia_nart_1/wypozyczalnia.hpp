@@ -25,6 +25,7 @@ class Wypozyczalnia : public CentrumNarciarskie
 {
 private:
 	vector <Narty*> wszystkie_narty;
+	vector <Narty> zapisane_narty;
 	int ilosc_nart;
 	Narty *narty;
 	Narty nartyN;
@@ -45,7 +46,7 @@ public:
 	void zapisz(Wypozyczalnia &wypozyczalnia);
 	void wczytaj(Wypozyczalnia &wypozyczalnia);
 	void wypiszPlikowe();
-	
+	void wypiszZapisane();
 	static size_t zwrocIloscWypozyczalni(void);
 	static size_t zwrocIloscNart(void);
 

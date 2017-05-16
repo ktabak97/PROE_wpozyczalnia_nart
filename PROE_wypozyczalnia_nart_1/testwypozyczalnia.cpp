@@ -14,18 +14,19 @@ void starttestwypozyczalnia()
 	cout << "////////////////////////" << endl << endl;
 
 
-	Wypozyczalnia pierwsza("mysliborska", 3);
+	Wypozyczalnia testowa("mysliborska", 3);
 	//pierwsza.wypiszWszystko();
 
 	//WypozyczalniaNartZawodniczych zawodnicza;
 	//zawodnicza.dodajNarty("Fisher WC");
 	//zawodnicza.wypiszWszystko();	
-	pierwsza.dodajNarty("Volkl");
-	pierwsza.dodajNarty("Blizzard");
-	pierwsza.zapisz(pierwsza);
+	testowa.dodajNarty("Volkl");
+	testowa.dodajNarty("Blizzard");
+	testowa.zapisz(testowa);
+	system("PAUSE");
 
-	pierwsza.wczytaj(pierwsza);
-	pierwsza.wypiszWszystko();
+	testowa.wczytaj(testowa);
+	testowa.wypiszZapisane();
 
 
 	//pierwsza.wypiszWszystko();

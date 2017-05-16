@@ -40,7 +40,7 @@ int main(void)
 				pierwsza.zmienIloscPomieszczen(5);
 				break;
 			case 6:	
-				pierwsza.wypiszPlikowe();
+				pierwsza.wypiszWszystko();
 				break;
 			case 7:
 				pierwsza.dodajNarty("volkl");
