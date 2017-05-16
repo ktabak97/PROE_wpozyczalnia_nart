@@ -62,7 +62,7 @@ public:
 	//void operator[](int i);
 	
 	friend ostream& operator << (ostream& n, Narty &nartyN);
-	friend istream& operator >> (istream& n, Narty &nartyN);
+	friend istream& operator >> (istream& w, Narty &narty);
 };
 
 #endif NARTY_HPP// _DEBUG

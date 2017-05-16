@@ -228,9 +228,9 @@ ostream& operator << (ostream &n, Narty &nartyN)
 	return n;
 }
 
-istream &operator >> (istream &n, Narty &nartyN)
+istream &operator >> (istream &w, Narty &narty)
 {
-	n >> nartyN.nazwa >> nartyN.cena >> nartyN.dlugosc >>
-		nartyN.zwrocPoziom() >> nartyN.zwrocDostepnosc();
-	return n;
+	w >> narty.nazwa >> narty.cena >> narty.dlugosc >>
+		narty.zwrocPoziom() >> narty.zwrocDostepnosc();
+	return w;
 }

@@ -241,40 +241,39 @@ void Wypozyczalnia::wczytaj(Wypozyczalnia &wypozyczalnia)
 	DEBUG_LOG("Wypozyczalnia - wczytano z pliku");
 }
 
-//ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
-//{
-//	w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " << 
-//		wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << endl;
-//	return w;
-//}
 
 ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
 {
 	for (int i = 0; i < wypozyczalnia.wszystkie_narty.size(); i++)
 	{
 		w << wypozyczalnia.typ_lokalu << " " << wypozyczalnia.adres << " " <<
-			wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << " " <<
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() << " " <<
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() << " " <<
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc() <<	endl;
+			wypozyczalnia.pomieszczenia << " " << wypozyczalnia.ilosc_nart << " ";
+
+		for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
+		{
+			w << wypozyczalnia.nartyN;
+		}
+			//wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() << " " <<
+			//wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() << " " <<
+			//wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc() <<	endl;
 	}
 	return w;
 }
 
-//istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
-//{
-//	w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart;
-//	return w;
-//}
 
 istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
 {
-	for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
-	{
-		w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart >>
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwe() >> wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() >>
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() >> wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() >>
-			wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc();
-	}
+		w >> wypozyczalnia.typ_lokalu >> wypozyczalnia.adres >> wypozyczalnia.pomieszczenia >> wypozyczalnia.ilosc_nart;
+		
+		wypozyczalnia.wszystkie_narty.clear();
+		wypozyczalnia.narty = new Narty[wypozyczalnia.ilosc_nart];
+		for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
+		{
+			w >> wypozyczalnia.nartyN;
+			wypozyczalnia.wszystkie_narty.push_back(wypozyczalnia.narty);
+		}
 	return w;
 }
+
+
+

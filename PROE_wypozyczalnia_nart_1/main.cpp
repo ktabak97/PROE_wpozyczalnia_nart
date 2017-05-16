@@ -20,7 +20,7 @@ int main(void)
 		cout << "^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
         cout << "Wybierz jeden z testow:" << endl <<
                  "1. Wypozyczalnie" << endl <<
-				 "2. Wyjscie" << endl;
+				 "2. Wyjscie" << endl << "3. zapisz" << endl << "4. wczytaj" << endl << "5. pomieszczenia" << endl << "6.wypisz" << endl << "7.dodajnarty" <<endl ;
         cin >> wybor;
         switch(wybor)
         {
@@ -41,6 +41,9 @@ int main(void)
 				break;
 			case 6:	
 				pierwsza.wypiszPlikowe();
+				break;
+			case 7:
+				pierwsza.dodajNarty("volkl");
 				break;
 			default:
                 cout << "Wybierz wlasciwy numer:" << endl;
