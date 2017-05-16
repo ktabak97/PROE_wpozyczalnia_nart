@@ -40,13 +40,14 @@ public:
 	void zmienIloscPomieszczen(unsigned int iloscpomieszczen);
 	void dodajNarty(string nazwa_s);
 	void dodajNarty(string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s);
-	void wypiszWszystko();
+	virtual void wypiszWszystko();
+	virtual void wypiszZapisane();
+	void wypiszPlikowe();
 	virtual int liczbaNart();
 	void usunNarte(string nazwa_n);
 	void zapisz(Wypozyczalnia &wypozyczalnia);
 	void wczytaj(Wypozyczalnia &wypozyczalnia);
-	void wypiszPlikowe();
-	void wypiszZapisane();
+
 	static size_t zwrocIloscWypozyczalni(void);
 	static size_t zwrocIloscNart(void);
 

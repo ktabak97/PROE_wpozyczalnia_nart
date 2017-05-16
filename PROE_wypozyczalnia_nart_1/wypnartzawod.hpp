@@ -25,16 +25,25 @@ class WypozyczalniaNartZawodniczych : public Wypozyczalnia
 private:
 	Komorki komorki;
 	vector <Narty*> wszystkie_nartyZ;
+	vector <Narty> zapisane_nartyZ;
 	Narty *nartyZ;
 	int standardowykat;
 	int ilosc_komorek;
+	int ilosc_nartZ;
 public:
 	WypozyczalniaNartZawodniczych();
 	~WypozyczalniaNartZawodniczych();
-	
+
 	void dodajNarty(string nazwa_s);
-	void wypiszWszystko();
+	void wypiszWszystko();	
+	void wypiszZapisane();
 	int liczbaNart();
+
+	void zapisz(WypozyczalniaNartZawodniczych &wypozyczalniaZ);
+	void wczytaj(WypozyczalniaNartZawodniczych &wypozyczalniaZ);
+
+	friend ostream& operator << (ostream &w, WypozyczalniaNartZawodniczych &wypozyczalniaZ);
+	friend istream& operator >> (istream &w, WypozyczalniaNartZawodniczych &wypozyczalniaZ);
 };
 
 

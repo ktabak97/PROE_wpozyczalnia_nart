@@ -220,11 +220,10 @@ void Wypozyczalnia::wczytaj(Wypozyczalnia &wypozyczalnia)
 	ifstream plik(nazwapliku_w);
 	plik >> wypozyczalnia;
 	plik.close();
-//	wypozyczalnia.nartyN.wczytaj(wypozyczalnia.nartyN);
+	//	wypozyczalnia.nartyN.wczytaj(wypozyczalnia.nartyN);
 
 	DEBUG_LOG("Wypozyczalnia - wczytano z pliku");
 }
-
 
 ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
 {
@@ -233,14 +232,12 @@ ostream & operator << (ostream &w, Wypozyczalnia &wypozyczalnia)
 
 		for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
 		{
-		//	w << wypozyczalnia.nartyN;
 			w << wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocCena() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc() << " " <<
 				wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziom() << " " << wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnosc() << endl;
 		}
 	
 	return w;
 }
-
 
 istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
 {
@@ -251,7 +248,7 @@ istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
 
 	wypozyczalnia.zapisane_narty.clear();
 	Narty nartyZ;
-//	wypozyczalnia.narty = new Narty[wypozyczalnia.ilosc_nart];
+
 	for (int i = 0; i < wypozyczalnia.ilosc_nart; i++)
 	{
 		w >> nartyZ;
@@ -260,54 +257,3 @@ istream & operator >> (istream &w, Wypozyczalnia &wypozyczalnia)
 	return w;
 
 }
-
-		//string nazwa_s;
-		//unsigned int cena_s, dlugosc_s;
-		//Poziom_n poziom_s;
-		//Dostepnosc_n dostepnosc_s;
-
-		//	w >> nazwa_s;
-		//	w >> cena_s;
-		//	w >> dlugosc_s;
-		//	w >> Poziom_n::poziom_s;
-		//	w >> dostepnosc_s;
-
-			//wszystkie_narty.push_back(narty);
-			/*cena_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocCena();
-			dlugosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc();
-			poziom_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziomN();
-			dostepnosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnoscN();
-*/
-	//		Wypozyczalnia testowa;
-	//		testowa.dodajNarty(nazwa_s, cena_s, dlugosc_s, Poziom_n::poziom_s, Dostepnosc_n::dostepnosc_s);
-	//		/*w >> wypozyczalnia.narty;
-	//		wypozyczalnia.wszystkie_narty.push_back(wypozyczalnia.narty);*/
-	//	}
-	//return w;
-//}
-
-//
-//narty = new Narty[wypozyczalnia.wszystkie_narty.size()];
-//
-//for (int i = 0; i < wypozyczalnia.wszystkie_narty.size(); i++)
-//{
-//	nazwa_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocNazwa();
-//	cena_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocCena();
-//	dlugosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDlugosc();
-//	poziom_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocPoziomN();
-//	dostepnosc_s = wypozyczalnia.wszystkie_narty.at(i)->zwrocDostepnoscN();
-//
-//	this->dodajNarty(nazwa_s, cena_s, dlugosc_s, poziom_s, dostepnosc_s);
-//}
-//
-//
-//int ln = liczbaNart();
-//for (int i = 0; i<ln; i++)
-//{
-//	cout << i + 1 << "." << endl;
-//	cout << "Nazwa:" << wszystkie_narty.at(i)->zwrocNazwa() << endl;
-//	cout << "Cena:" << wszystkie_narty.at(i)->zwrocCena() << endl;
-//	cout << "Dlugosc:" << wszystkie_narty.at(i)->zwrocDlugosc() << endl;
-//	cout << "Poziom:" << wszystkie_narty.at(i)->zwrocPoziom() << endl;
-//	cout << "Dostepnosc:" << wszystkie_narty.at(i)->zwrocDostepnosc(); cout << endl << endl;
-//}
