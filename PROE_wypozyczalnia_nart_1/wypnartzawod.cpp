@@ -25,7 +25,7 @@ WypozyczalniaNartZawodniczych::WypozyczalniaNartZawodniczych()
 
 WypozyczalniaNartZawodniczych::~WypozyczalniaNartZawodniczych()
 {
-	delete[] nartyZ;
+	delete nartyZ;
 	DEBUG_LOG("WypozyczalniaNartZawodniczych - destruktor");
 }
 
@@ -132,12 +132,12 @@ istream & operator >> (istream &w, WypozyczalniaNartZawodniczych &wypozyczalniaZ
 	w >> wypozyczalniaZ.ilosc_nartZ;
 
 	wypozyczalniaZ.zapisane_nartyZ.clear();
-	Narty nartyZ;
+	Narty nartyF;
 
 	for (int i = 0; i < wypozyczalniaZ.ilosc_nartZ; i++)
 	{
-		w >> nartyZ;
-		wypozyczalniaZ.zapisane_nartyZ.push_back(nartyZ);
+		w >> nartyF;
+		wypozyczalniaZ.zapisane_nartyZ.push_back(nartyF);
 	}
 	return w;
 

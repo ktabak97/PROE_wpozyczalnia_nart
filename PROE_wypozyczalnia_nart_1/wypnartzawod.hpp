@@ -38,11 +38,13 @@ public:
 	void wypiszWszystko();	
 	void wypiszZapisane();
 	int liczbaNart();
-
+	///funkcja sluzaca do zapisu Wypozyczalni nart zawodniczych
 	void zapisz(WypozyczalniaNartZawodniczych &wypozyczalniaZ);
+	///funkcja sluzaca do wczytywania Wypozyczalni nart zawodniczych
 	void wczytaj(WypozyczalniaNartZawodniczych &wypozyczalniaZ);
-
+	///operator strumieniowy do zapisu
 	friend ostream& operator << (ostream &w, WypozyczalniaNartZawodniczych &wypozyczalniaZ);
+	///operator strumieniowy do wczytywania
 	friend istream& operator >> (istream &w, WypozyczalniaNartZawodniczych &wypozyczalniaZ);
 };
 

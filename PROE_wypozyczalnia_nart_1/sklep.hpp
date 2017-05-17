@@ -25,6 +25,7 @@ private:
 	int ilosc_przecen;
 
 public:
+	///
 	Sklep();
 	~Sklep();
 	void wypiszWszystko();

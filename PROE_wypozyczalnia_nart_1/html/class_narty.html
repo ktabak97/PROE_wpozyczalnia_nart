@@ -70,6 +70,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
+<tr class="memitem:a312e42f1c67b9eb1307ae28551d5a568"><td class="memItemLeft" align="right" valign="top"><a id="a312e42f1c67b9eb1307ae28551d5a568"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_narty.html#a312e42f1c67b9eb1307ae28551d5a568">Narty</a> ()</td></tr>
+<tr class="memdesc:a312e42f1c67b9eb1307ae28551d5a568"><td class="mdescLeft">&#160;</td><td class="mdescRight">konstruktor domyslny nart <br /></td></tr>
+<tr class="separator:a312e42f1c67b9eb1307ae28551d5a568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e97c71362fec6e6495f35750e1c45d2"><td class="memItemLeft" align="right" valign="top"><a id="a0e97c71362fec6e6495f35750e1c45d2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Narty</b> (string)</td></tr>
 <tr class="separator:a0e97c71362fec6e6495f35750e1c45d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -77,7 +81,8 @@ Metody publiczne</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Narty</b> (string, unsigned int, unsigned int, Poziom_n, Dostepnosc_n)</td></tr>
 <tr class="separator:a061922fefe4e2cc8da8daf66ce0070fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5629023cde81ccb70cef0d02d315347"><td class="memItemLeft" align="right" valign="top"><a id="af5629023cde81ccb70cef0d02d315347"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Narty</b> (const <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_narty.html#af5629023cde81ccb70cef0d02d315347">Narty</a> (const <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
+<tr class="memdesc:af5629023cde81ccb70cef0d02d315347"><td class="mdescLeft">&#160;</td><td class="mdescRight">konstruktor kopiujacy narty <br /></td></tr>
 <tr class="separator:af5629023cde81ccb70cef0d02d315347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704912bf1923302796ed7465678d4664"><td class="memItemLeft" align="right" valign="top"><a id="a704912bf1923302796ed7465678d4664"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>zwrocNazwa</b> () const</td></tr>
@@ -109,6 +114,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>zmienCene</b> (unsign
 <tr class="memitem:af3f12c0fc248e86f0a9f447edeacbba8"><td class="memItemLeft" align="right" valign="top"><a id="af3f12c0fc248e86f0a9f447edeacbba8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>zmienWszystko</b> (string nazwa_s, unsigned int cena_s, unsigned int dlugosc_s, Poziom_n poziom_s, Dostepnosc_n dostepnosc_s)</td></tr>
 <tr class="separator:af3f12c0fc248e86f0a9f447edeacbba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3553c6100b994e0519929b0497bb55f"><td class="memItemLeft" align="right" valign="top"><a id="ad3553c6100b994e0519929b0497bb55f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>zapisz</b> (<a class="el" href="class_narty.html">Narty</a> &amp;nartyN)</td></tr>
+<tr class="separator:ad3553c6100b994e0519929b0497bb55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c82f90a83a16b7ec698ddbb9bbf7ba"><td class="memItemLeft" align="right" valign="top"><a id="a49c82f90a83a16b7ec698ddbb9bbf7ba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>wczytaj</b> (<a class="el" href="class_narty.html">Narty</a> &amp;nartyN)</td></tr>
+<tr class="separator:a49c82f90a83a16b7ec698ddbb9bbf7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0591de264b025dde1fcb77e3d47020b"><td class="memItemLeft" align="right" valign="top"><a id="ac0591de264b025dde1fcb77e3d47020b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>wypiszNarty</b> ()</td></tr>
+<tr class="separator:ac0591de264b025dde1fcb77e3d47020b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18cc9d232e226a63ca1b95d9afd7b1e3"><td class="memItemLeft" align="right" valign="top"><a id="a18cc9d232e226a63ca1b95d9afd7b1e3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
 <tr class="separator:a18cc9d232e226a63ca1b95d9afd7b1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,9 +153,14 @@ static size_t&#160;</td><td class="memItemRight" valign="bottom"><b>zwrocIloscNa
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Przyjaciele</h2></td></tr>
-<tr class="memitem:af8090f0e17f1b341d4ef1e4c55391edf"><td class="memItemLeft" align="right" valign="top"><a id="af8090f0e17f1b341d4ef1e4c55391edf"></a>
-ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;os, const <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
-<tr class="separator:af8090f0e17f1b341d4ef1e4c55391edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba7206ea101a398967e4a3a71241705"><td class="memItemLeft" align="right" valign="top"><a id="adba7206ea101a398967e4a3a71241705"></a>
+ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_narty.html#adba7206ea101a398967e4a3a71241705">operator&lt;&lt;</a> (ostream &amp;w, <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
+<tr class="memdesc:adba7206ea101a398967e4a3a71241705"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator zapisu nart <br /></td></tr>
+<tr class="separator:adba7206ea101a398967e4a3a71241705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5081ba475d5503a53492c40e42a4bb"><td class="memItemLeft" align="right" valign="top"><a id="a1e5081ba475d5503a53492c40e42a4bb"></a>
+istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_narty.html#a1e5081ba475d5503a53492c40e42a4bb">operator&gt;&gt;</a> (istream &amp;w, <a class="el" href="class_narty.html">Narty</a> &amp;narty)</td></tr>
+<tr class="memdesc:a1e5081ba475d5503a53492c40e42a4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator wczytywania nart <br /></td></tr>
+<tr class="separator:a1e5081ba475d5503a53492c40e42a4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
 <li><a class="el" href="narty_8hpp_source.html">narty.hpp</a></li>

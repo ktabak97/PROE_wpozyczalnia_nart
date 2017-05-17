@@ -11,19 +11,29 @@
 #include <fstream>
 
 using namespace std;
-
-class CentrumNarciarskie
+///klasa abstrakcyjna
+class CentrumNarciarskie 
 {
 public:
-	CentrumNarciarskie();
-	virtual ~CentrumNarciarskie();
-	virtual void zmienIloscPomieszczen(unsigned int iloscpomieszczen) = 0;
-	virtual void wypiszWszystko() = 0;
+	CentrumNarciarskie(); 
+	virtual ~CentrumNarciarskie(); 
+	///funkcja wirtualna do zmiany ilosci pomieszczen
+	virtual void zmienIloscPomieszczen(unsigned int iloscpomieszczen) = 0;  
+	///funkcja wirtualna wypisujaca cechy danego obiektu
+	virtual void wypiszWszystko() = 0; 
+	///funkcj wirtualna wypisujaca wczytane obiekty
+	virtual void wypiszZapisane() = 0;
 		
-protected:
-	string typ_lokalu;
+
+protected: 
+	///chronione zmienna, dostepne dla klas dziedziczacych
+	string typ_lokalu; 
+	///chronione zmienna, dostepne dla klas dziedziczacych
 	string adres;
+	///chronione zmienna, dostepne dla klas dziedziczacych
 	unsigned int pomieszczenia;
+	///chronione zmienna, dostepne dla klas dziedziczacych
+	int ilosc_nart;
 };
 
 

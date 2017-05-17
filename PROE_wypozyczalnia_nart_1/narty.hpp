@@ -31,10 +31,12 @@ private:
     static size_t ilosc_nartG;
 
 public:
+	///konstruktor domyslny nart
 	Narty();
     Narty(string);
     Narty(string, unsigned int, unsigned int, Poziom_n, Dostepnosc_n);
-    Narty(const Narty &narty);
+    ///konstruktor kopiujacy narty
+	Narty(const Narty &narty);
     ~Narty();
 
     string zwrocNazwa() const;
@@ -60,9 +62,10 @@ public:
 	bool operator != (const Narty &narty);
 	bool operator ^ (const Narty &narty);
 	Narty operator + (const Narty &narty);
-	//void operator[](int i);
-	
+
+	///operator zapisu nart
 	friend ostream& operator << (ostream& w, Narty &narty);
+	///operator wczytywania nart
 	friend istream& operator >> (istream& w, Narty &narty);
 };
 

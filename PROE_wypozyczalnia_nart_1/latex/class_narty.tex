@@ -3,6 +3,9 @@
 \subsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_narty_a312e42f1c67b9eb1307ae28551d5a568}\label{class_narty_a312e42f1c67b9eb1307ae28551d5a568}} 
+\hyperlink{class_narty_a312e42f1c67b9eb1307ae28551d5a568}{Narty} ()
+\begin{DoxyCompactList}\small\item\em konstruktor domyslny nart \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_narty_a0e97c71362fec6e6495f35750e1c45d2}\label{class_narty_a0e97c71362fec6e6495f35750e1c45d2}} 
 {\bfseries Narty} (string)
 \item 
@@ -10,8 +13,8 @@
 {\bfseries Narty} (string, unsigned int, unsigned int, Poziom\+\_\+n, Dostepnosc\+\_\+n)
 \item 
 \mbox{\Hypertarget{class_narty_af5629023cde81ccb70cef0d02d315347}\label{class_narty_af5629023cde81ccb70cef0d02d315347}} 
-{\bfseries Narty} (const \hyperlink{class_narty}{Narty} \&narty)
-\item 
+\hyperlink{class_narty_af5629023cde81ccb70cef0d02d315347}{Narty} (const \hyperlink{class_narty}{Narty} \&narty)
+\begin{DoxyCompactList}\small\item\em konstruktor kopiujacy narty \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_narty_a704912bf1923302796ed7465678d4664}\label{class_narty_a704912bf1923302796ed7465678d4664}} 
 string {\bfseries zwroc\+Nazwa} () const
 \item 
@@ -41,6 +44,15 @@ void {\bfseries zmien\+Cene} (unsigned int n\+\_\+cena)
 \item 
 \mbox{\Hypertarget{class_narty_af3f12c0fc248e86f0a9f447edeacbba8}\label{class_narty_af3f12c0fc248e86f0a9f447edeacbba8}} 
 void {\bfseries zmien\+Wszystko} (string nazwa\+\_\+s, unsigned int cena\+\_\+s, unsigned int dlugosc\+\_\+s, Poziom\+\_\+n poziom\+\_\+s, Dostepnosc\+\_\+n dostepnosc\+\_\+s)
+\item 
+\mbox{\Hypertarget{class_narty_ad3553c6100b994e0519929b0497bb55f}\label{class_narty_ad3553c6100b994e0519929b0497bb55f}} 
+void {\bfseries zapisz} (\hyperlink{class_narty}{Narty} \&nartyN)
+\item 
+\mbox{\Hypertarget{class_narty_a49c82f90a83a16b7ec698ddbb9bbf7ba}\label{class_narty_a49c82f90a83a16b7ec698ddbb9bbf7ba}} 
+void {\bfseries wczytaj} (\hyperlink{class_narty}{Narty} \&nartyN)
+\item 
+\mbox{\Hypertarget{class_narty_ac0591de264b025dde1fcb77e3d47020b}\label{class_narty_ac0591de264b025dde1fcb77e3d47020b}} 
+void {\bfseries wypisz\+Narty} ()
 \item 
 \mbox{\Hypertarget{class_narty_a18cc9d232e226a63ca1b95d9afd7b1e3}\label{class_narty_a18cc9d232e226a63ca1b95d9afd7b1e3}} 
 void {\bfseries operator=} (const \hyperlink{class_narty}{Narty} \&narty)
@@ -72,9 +84,12 @@ static size\+\_\+t {\bfseries zwroc\+Ilosc\+Nart} (void)
 \subsection*{Przyjaciele}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_narty_af8090f0e17f1b341d4ef1e4c55391edf}\label{class_narty_af8090f0e17f1b341d4ef1e4c55391edf}} 
-ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \hyperlink{class_narty}{Narty} \&narty)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_narty_adba7206ea101a398967e4a3a71241705}\label{class_narty_adba7206ea101a398967e4a3a71241705}} 
+ostream \& \hyperlink{class_narty_adba7206ea101a398967e4a3a71241705}{operator$<$$<$} (ostream \&w, \hyperlink{class_narty}{Narty} \&narty)
+\begin{DoxyCompactList}\small\item\em operator zapisu nart \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_narty_a1e5081ba475d5503a53492c40e42a4bb}\label{class_narty_a1e5081ba475d5503a53492c40e42a4bb}} 
+istream \& \hyperlink{class_narty_a1e5081ba475d5503a53492c40e42a4bb}{operator$>$$>$} (istream \&w, \hyperlink{class_narty}{Narty} \&narty)
+\begin{DoxyCompactList}\small\item\em operator wczytywania nart \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}

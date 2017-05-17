@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kask',['Kask',['../class_kask.html',1,'']]]
+  ['centrumnarciarskie',['CentrumNarciarskie',['../class_centrum_narciarskie.html',1,'']]]
 ];

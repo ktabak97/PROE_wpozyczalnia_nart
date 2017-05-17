@@ -185,6 +185,7 @@ Narty Narty::operator+(const Narty &narty)
 	return c;
 }
 
+/////////////////////////////////////////////////////////////////////////////
 
 void Narty::wypiszNarty()
 {
@@ -200,6 +201,7 @@ void Narty::wypiszNarty()
 		cout << "Dostepnosc:" << zwrocDostepnosc(); cout << endl << endl;
 	}
 }
+
 
 void Narty::zapisz(Narty &nartyN)
 {
