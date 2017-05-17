@@ -47,13 +47,12 @@ int main(void)
 				pierwsza.zmienIloscPomieszczen(b);
 				break;
 			case 6:	
-				pierwsza.wypiszZapisane();
+				pierwsza.wypiszWszystko();
 				break;
 			case 7:
-				pierwsza.dodajNarty("volkl");
+				return 0;
 				break;
 			default:
-                cout << "Wybierz wlasciwy numer:" << endl;
                 cin.clear();
                 cin.get();
         }

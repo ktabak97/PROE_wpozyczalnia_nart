@@ -15,16 +15,22 @@ void starttestwypozyczalnia()
 
 
 	Wypozyczalnia testowa("mysliborska", 3);
+	system("PAUSE");
 	testowa.dodajNarty("Volkl");
+	system("PAUSE");
 	testowa.dodajNarty("Blizzard");
+	system("PAUSE");
 	testowa.zapisz(testowa);
 	system("PAUSE");
 
 	testowa.wczytaj(testowa);
+	system("PAUSE");
 	testowa.wypiszZapisane();
 
 	WypozyczalniaNartZawodniczych zawodnicza;
+	system("PAUSE");
 	zawodnicza.dodajNarty("FisherWC");
+	system("PAUSE");
 	zawodnicza.zapisz(zawodnicza);
 	system("PAUSE");
 

@@ -1,2 +1,2 @@
 WypozyczalniaNartZawodniczych Zawodnicza 1 2 HeadRD 30 160 Poczatkujacy Dostepne
-FishcewfgerWC 30 160 Poczatkujacy Dostepne
+FisherWC 30 160 Poczatkujacy Dostepne
