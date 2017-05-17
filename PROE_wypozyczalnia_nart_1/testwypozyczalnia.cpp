@@ -24,14 +24,13 @@ void starttestwypozyczalnia()
 	testowa.wypiszZapisane();
 
 	WypozyczalniaNartZawodniczych zawodnicza;
-	zawodnicza.dodajNarty("Fisher WC");
+	zawodnicza.dodajNarty("FisherWC");
 	zawodnicza.zapisz(zawodnicza);
 	system("PAUSE");
 
 	zawodnicza.wczytaj(zawodnicza);
 	system("PAUSE");
-	zawodnicza.wypiszWszystko();
-//	zawodnicza.wypiszZapisane();
+	zawodnicza.wypiszZapisane();
 	
 
 	cout << "////////////////////////" << endl;

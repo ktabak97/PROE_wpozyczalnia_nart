@@ -9,14 +9,14 @@ string nazwaplikuZ = "wypozyczalnianartzawodniczych.txt";
 
 WypozyczalniaNartZawodniczych::WypozyczalniaNartZawodniczych()
 {
-	typ_lokalu = "Wypozyczalnia nart zawodniczych";
+	typ_lokalu = "WypozyczalniaNartZawodniczych";
 	adres = "Zawodnicza";
 	pomieszczenia = 1;
 	ilosc_nartZ = 1;
 	ilosc_komorek = 1;
 	standardowykat = 87;
 
-	nartyZ = new Narty("Head RD");
+	nartyZ = new Narty("HeadRD");
 	wszystkie_nartyZ.push_back(nartyZ);
 
 

@@ -14,13 +14,16 @@ void starttestwypozyczalnia(void);
 int main(void)
 {
     int wybor;
+	string a;
+	int b;
 	Wypozyczalnia pierwsza;
     do
     {
 		cout << "^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
-        cout << "Wybierz jeden z testow:" << endl <<
-                 "1. Wypozyczalnie" << endl <<
-				 "2. Wyjscie" << endl << "3. zapisz" << endl << "4. wczytaj" << endl << "5. pomieszczenia" << endl << "6.wypisz" << endl << "7.dodajnarty" <<endl ;
+        cout << "Wybierz opcje:" << endl <<
+                 "1. Test wypozyczalni" << endl << "2. Dodaj narty" << endl 
+			<< "3. Zapisz" << endl << "4. Wczytaj" << endl << "5. Zmien ilosc pomieszczen" << endl
+			<< "6. Wypisz" << endl << "7. Wyjdz" <<endl ;
         cin >> wybor;
         switch(wybor)
         {
@@ -28,8 +31,10 @@ int main(void)
                 starttestwypozyczalnia();
                 break;
             case 2:
-                return 0;
-                break;
+				cout << "Podaj nazwe nart:" <<endl;
+				cin >> a;
+				pierwsza.dodajNarty(a);
+				break;
 			case 3:
 				pierwsza.zapisz(pierwsza);
 				break;
@@ -37,10 +42,12 @@ int main(void)
 				pierwsza.wczytaj(pierwsza);
 				break;
 			case 5:
-				pierwsza.zmienIloscPomieszczen(5);
+				cout << "Podaj ilosc pomieszczen:" << endl;
+				cin >> b;
+				pierwsza.zmienIloscPomieszczen(b);
 				break;
 			case 6:	
-				pierwsza.wypiszWszystko();
+				pierwsza.wypiszZapisane();
 				break;
 			case 7:
 				pierwsza.dodajNarty("volkl");
